@@ -14,6 +14,7 @@ import {
   Image,
   Layout,
   Link,
+  S,
   ListItem,
   List,
   Markdown,
@@ -79,7 +80,7 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Creating</ListItem></Appear>
               <Appear><ListItem>Managing</ListItem></Appear>
               <Appear><ListItem>Documenting</ListItem></Appear>
-              <Appear><ListItem>Resources</ListItem></Appear>
+              <Appear><ListItem>Resources & Continued Learning</ListItem></Appear>
             </List>
           </Slide>
           <Slide>
@@ -97,8 +98,8 @@ export default class Presentation extends React.Component {
             <Image src={images.toohard.replace("/", "")}/>
             <Appear><Heading fit textColor="secondary">It doesn't have to be.</Heading></Appear>
           </Slide>
-          <Slide>
-            <Heading fit caps>Simple, but Powerful</Heading>
+          <Slide notes="LabTech and Kaseya both have the ability to run PowerShell scripts. Kaseya was a bit more difficult to find documentation for, could just be me not having access to it.">
+            <Heading fit caps lineHeight={1.5}>Simple, but Powerful</Heading>
             <CodePane
               lang="powershell"
               source={"Search-ADAccount -AccountInactive | Export-CSV C:\\inactive-accounts.csv"}
@@ -111,6 +112,19 @@ export default class Presentation extends React.Component {
                 margin="20px auto"
               />
             </Appear>
+            <Appear>
+              <Text fit>Not everyone can write complex scripts, but everyone <S type="italic">can</S> use them!</Text>
+            </Appear>
+          </Slide>
+          <Slide notes="There's a level above Python we won't discuss. You can download and run scripts and executables with LabTech. ">
+            <Heading fit caps>Code Complexity</Heading>
+            <List>
+              <Appear><ListItem>Python (with PyInstaller)</ListItem></Appear>
+              <Appear><ListItem>PowerShell</ListItem></Appear>
+              <Appear><ListItem>AutoHotKey / AutoIT</ListItem></Appear>
+              <Appear><ListItem>Batch</ListItem></Appear>
+              <Appear><ListItem>IFTTT / Zapier</ListItem></Appear>
+            </List>
           </Slide>
         </Deck>
       </Spectacle>
