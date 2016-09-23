@@ -68,8 +68,8 @@ export default class Presentation extends React.Component {
               Scripting for the MSP
             </Heading>
             <Layout>
-              <Fill><Image src={images.chartec}/></Fill>
-              <Fill><Image src={images.relyenz}/></Fill>
+              <Fill><Image src={images.chartec.replace("/", "")}/></Fill>
+              <Fill><Image src={images.relyenz.replace("/", "")}/></Fill>
             </Layout>
           </Slide>
           <Slide>
@@ -94,7 +94,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide bgColor="black">
-            <Image src={images.toohard}/>
+            <Image src={images.toohard.replace("/", "")}/>
             <Appear><Heading fit textColor="secondary">It doesn't have to be.</Heading></Appear>
           </Slide>
           <Slide>
