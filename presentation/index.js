@@ -72,6 +72,7 @@ export default class Presentation extends React.Component {
               <Fill><Image src={images.chartec.replace("/", "")}/></Fill>
               <Fill><Image src={images.relyenz.replace("/", "")}/></Fill>
             </Layout>
+            <Text>http://bit.ly/mspscripting</Text>
           </Slide>
           <Slide>
             <Heading caps>Overview</Heading>
@@ -131,7 +132,12 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide>
-            <Heading fit caps>Git: It's Not Just for Developers</Heading>
+            <Heading fit caps>Git: It's Not <S type="italics">Just</S> for Developers</Heading>
+            <List>
+              <Appear><ListItem>Simple version control for any file type.</ListItem></Appear>
+              <Appear><ListItem>Documentation can be made and viewed in the same place as your scripts.</ListItem></Appear>
+              <Appear><ListItem>Free private hosting is readily available. (not GitHub)</ListItem></Appear>
+            </List>
           </Slide>
         </Deck>
       </Spectacle>
