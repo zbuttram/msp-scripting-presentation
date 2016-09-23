@@ -9,6 +9,7 @@ import {
   CodePane,
   Deck,
   Fill,
+  Fit,
   Heading,
   Image,
   Layout,
@@ -22,6 +23,8 @@ import {
   Text
 } from "spectacle";
 
+import CodeSlide from "spectacle-code-slide";
+
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
@@ -29,7 +32,7 @@ import preloader from "spectacle/lib/utils/preloader";
 import createTheme from "spectacle/lib/themes/default";
 
 // Import custom component
-import Interactive from "../assets/interactive";
+// import Interactive from "../assets/interactive";
 
 // Require CSS
 require("normalize.css");
@@ -37,133 +40,75 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/markdown.png"),
+  chartec: require("../assets/CharTecLogo_Red_200.png"),
+  relyenz: require("../assets/RelyenzLogo.png"),
+  toohard: require("../assets/toohard.gif")
 };
 
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ff4081"
+  primary: "white",
+  secondary: "#990505",
+  tertiary: "black",
+  quartenary: "#595959"
 });
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1} textColor="black">
-              Spectacle
+        <Deck transition={["slide"]} transitionDuration={500}>
+          <Slide transition={["zoom", "slide"]}>
+            <Heading size={1} fit caps lineHeight={1}>
+              Holy Script!
             </Heading>
-            <Heading size={1} fit caps>
-              A ReactJS Presentation Library
+            <Heading size={1} fit caps textColor="secondary">
+              Scripting for the MSP
             </Heading>
-            <Heading size={1} fit caps textColor="black">
-              Where You Can Write Your Decks In JSX
-            </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
-            </Link>
-            <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
-            </Heading>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <CodePane
-              lang="jsx"
-              source={require("raw!../assets/deck.example")}
-              margin="20px auto"
-            />
-          </Slide>
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
             <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
+              <Fill><Image src={images.chartec}/></Fill>
+              <Fill><Image src={images.relyenz}/></Fill>
             </Layout>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Slide>
+            <Heading caps>Overview</Heading>
             <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+              <Appear><ListItem>How can MSPs benefit from scripting knowledge?</ListItem></Appear>
+              <Appear><ListItem>Creating</ListItem></Appear>
+              <Appear><ListItem>Managing</ListItem></Appear>
+              <Appear><ListItem>Documenting</ListItem></Appear>
+              <Appear><ListItem>Resources</ListItem></Appear>
             </List>
           </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
+          <Slide>
+            <Heading caps>Why Scripts?</Heading>
+            <List>
+              <Appear><ListItem>Quick Fixes</ListItem></Appear>
+              <Appear><ListItem>Monitoring</ListItem></Appear>
+              <Appear><ListItem>Macros</ListItem></Appear>
+              <Appear><ListItem>Data Gathering/Merging/Transformations</ListItem></Appear>
+              <Appear><ListItem>Computer Science</ListItem></Appear>
+              <Appear><ListItem>Do More with Less</ListItem></Appear>
+            </List>
           </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
+          <Slide bgColor="black">
+            <Image src={images.toohard}/>
+            <Appear><Heading fit textColor="secondary">It doesn't have to be.</Heading></Appear>
+          </Slide>
+          <Slide>
+            <Heading fit caps>Simple, but Powerful</Heading>
+            <CodePane
+              lang="powershell"
+              source={"Search-ADAccount -AccountInactive | Export-CSV C:\\inactive-accounts.csv"}
+              margin="20px auto"
+            />
+            <CodePane
+              lang="powershell"
+              source={"Search-ADAccount -PasswordNeverExpires | Export-CSV C:\\unsecured-accounts.csv"}
+              margin="20px auto"
+            />
           </Slide>
         </Deck>
       </Spectacle>
