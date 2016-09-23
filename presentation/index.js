@@ -104,11 +104,13 @@ export default class Presentation extends React.Component {
               source={"Search-ADAccount -AccountInactive | Export-CSV C:\\inactive-accounts.csv"}
               margin="20px auto"
             />
-            <CodePane
-              lang="powershell"
-              source={"Search-ADAccount -PasswordNeverExpires | Export-CSV C:\\unsecured-accounts.csv"}
-              margin="20px auto"
-            />
+            <Appear>
+              <CodePane
+                lang="powershell"
+                source={"Search-ADAccount -PasswordNeverExpires | Export-CSV C:\\unsecured-accounts.csv"}
+                margin="20px auto"
+              />
+            </Appear>
           </Slide>
         </Deck>
       </Spectacle>
