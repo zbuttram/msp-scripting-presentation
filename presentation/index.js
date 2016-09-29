@@ -35,6 +35,8 @@ import createTheme from "spectacle/lib/themes/default";
 // Import custom component
 // import Interactive from "../assets/interactive";
 
+const ExtLink = (props) => <Link href={props.to} target="_blank">{props.children}</Link>;
+
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
@@ -44,7 +46,8 @@ const images = {
   markdown: require("../assets/markdown.png"),
   chartec: require("../assets/CharTecLogo_Red_200.png"),
   relyenz: require("../assets/RelyenzLogo.png"),
-  toohard: require("../assets/toohard.gif")
+  toohard: require("../assets/toohard.gif"),
+  me: require("../assets/me.jpg")
 };
 
 preloader(images);
@@ -75,8 +78,14 @@ export default class Presentation extends React.Component {
             <Text>http://bit.ly/mspscripting</Text>
           </Slide>
           <Slide>
-            <Heading caps>Overview</Heading>
-            <Heading size={4} caps textColor="secondary">(What We'll Cover)</Heading>
+            <Heading caps>-Me-</Heading>
+            <Heading size={4} caps textColor="secondary"><ExtLink to="https://twitter.com/zbuttram">@zbuttram</ExtLink></Heading>
+            <Image src={images.me.replace("/", "")}/>
+            <Text>Full-Stack Web Developer</Text>
+          </Slide>
+          <Slide>
+            <Heading caps>-Overview-</Heading>
+            <Heading size={4} caps textColor="secondary">What We'll Cover</Heading>
             <List>
               <Appear><ListItem>WHY: How can MSPs benefit from scripting knowledge?</ListItem></Appear>
               <Appear><ListItem>WHAT: Understanding what options are available.</ListItem></Appear>
@@ -86,7 +95,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide>
-            <Heading caps>Why Scripts?</Heading>
+            <Heading caps>-Why-</Heading>
             <List>
               <Appear><ListItem>Implement Quick Fixes</ListItem></Appear>
               <Appear><ListItem>Customize Your Monitoring</ListItem></Appear>
@@ -103,7 +112,7 @@ export default class Presentation extends React.Component {
             <Appear><Heading fit textColor="primary">It doesn't have to be.</Heading></Appear>
           </Slide>
           <Slide notes="LabTech and Kaseya both have the ability to run PowerShell scripts. Kaseya was a bit more difficult to find documentation for, could just be me not having access to it.">
-            <Heading fit caps lineHeight={1.5}>Simple, but Powerful</Heading>
+            <Heading fit caps lineHeight={1.5} size={8}>Simple, but Powerful</Heading>
             <CodePane
               lang="powershell"
               source={"Search-ADAccount -AccountInactive | Export-CSV C:\\inactive-accounts.csv"}
@@ -117,26 +126,116 @@ export default class Presentation extends React.Component {
               />
             </Appear>
             <Appear>
-              <Text fit>Not everyone can write complex scripts, but everyone <S type="italic">can</S> use them!</Text>
+              <Text>Not everyone can write complex scripts, but simple and thoughtful scripts can have great reusability.</Text>
             </Appear>
           </Slide>
           <Slide notes="There's a level above Python we won't discuss. You can download and run scripts and executables with LabTech. ">
-            <Heading fit caps>Languages and Services</Heading>
-            <Heading fit caps>In (Roughly) Order of Complexity</Heading>
+            <Heading caps>-WHAT-</Heading>
+            <Heading size={4} textColor="secondary" fit caps>Languages and Services</Heading>
+            <Heading size={5} caps>In (Roughly) Order of Complexity</Heading>
             <List>
-              <Appear><ListItem>Python (with <Link href="http://www.pyinstaller.org/" target="_blank">PyInstaller</Link>)</ListItem></Appear>
+              <Appear><ListItem><ExtLink to="https://www.python.org/">Python</ExtLink></ListItem></Appear>
               <Appear><ListItem>PowerShell</ListItem></Appear>
-              <Appear><ListItem><Link href="http://ahkscript.org/" target="_blank">AutoHotKey</Link> / <Link href="https://www.autoitscript.com/site/autoit/" target="_blank">AutoIT</Link></ListItem></Appear>
+              <Appear><ListItem><ExtLink to="http://ahkscript.org/">AutoHotKey</ExtLink> / <ExtLink to="https://www.autoitscript.com/site/autoit/">AutoIT</ExtLink></ListItem></Appear>
               <Appear><ListItem>Batch</ListItem></Appear>
-              <Appear><ListItem><Link href="https://ifttt.com/" target="_blank">IFTTT</Link> / <Link href="https://zapier.com/" target="_blank">Zapier</Link></ListItem></Appear>
+              <Appear><ListItem><ExtLink to="https://ifttt.com/">IFTTT</ExtLink> / <ExtLink to="https://zapier.com/">Zapier</ExtLink></ListItem></Appear>
+            </List>
+          </Slide>
+          <Slide notes="Third most active languange on GitHub">
+            <Heading caps>-WHAT-</Heading>
+            <Heading textColor="secondary" size={4} caps>Python</Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Pros
+                  <List>
+                    <Appear><ListItem><ExtLink to="https://pypi.python.org/pypi">Rich Ecosystem of Modules</ExtLink></ListItem></Appear>
+                    <Appear><ListItem><ExtLink to="http://www.pyinstaller.org/">Can be Packaged as Native Executables (.exe)</ExtLink></ListItem></Appear>
+                    <Appear><ListItem>Cross-Platform Compatibility</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Cons
+                  <List>
+                    <Appear><ListItem>Bigger Learning Curve</ListItem></Appear>
+                    <Appear><ListItem>Less High-Level Abstractions</ListItem></Appear>
+                    <Appear><ListItem><ExtLink to="http://py3readiness.org/">The 2.7 vs 3.5 Problem</ExtLink></ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
             </List>
           </Slide>
           <Slide>
-            <Heading fit caps>Git: It's Not <S type="italics">Just</S> for Developers</Heading>
+            <Heading caps>-WHAT-</Heading>
+            <Heading textColor="secondary" size={4} caps>PowerShell</Heading>
             <List>
-              <Appear><ListItem>Simple version control for any file type.</ListItem></Appear>
+              <Appear>
+                <ListItem>
+                  Pros
+                  <List>
+                    <Appear><ListItem>Built-In to Windows</ListItem></Appear>
+                    <Appear><ListItem>Microsoft is All-In</ListItem></Appear>
+                    <Appear><ListItem>Can Fall Back to Batch</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Cons
+                  <List>
+                    <Appear><ListItem>Big-ish Learning Curve</ListItem></Appear>
+                    <Appear><ListItem>No Cross-Platform</ListItem></Appear>
+                    <Appear><ListItem>The Execution Policy Problem</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading caps>-WHAT-</Heading>
+            <Heading textColor="secondary" size={4} caps>AutoHotKey / AutoIT</Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Pros
+                  <List>
+                    <Appear><ListItem>Easy to Create Userland Macros</ListItem></Appear>
+                    <Appear><ListItem>Can be Packaged as Native Executables (.exe)</ListItem></Appear>
+                    <Appear><ListItem>Easy to Accept Input from Users</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Cons
+                  <List>
+                    <Appear><ListItem>Non-Traditional Programming Models</ListItem></Appear>
+                    <Appear><ListItem>Less Standard Library Coverage</ListItem></Appear>
+                    <Appear><ListItem></ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading caps>-WHERE-</Heading>
+            <Heading fit caps size={4} textColor="secondary">Git: It's Not Just for Developers</Heading>
+            <List>
+              <Appear><ListItem>Version control for any file type.</ListItem></Appear>
               <Appear><ListItem>Documentation can be made and viewed in the same place as your scripts.</ListItem></Appear>
-              <Appear><ListItem>Free private hosting is readily available. (not GitHub)</ListItem></Appear>
+              <Appear><ListItem>Free hosting is readily available: GitHub, BitBucket, GitLab</ListItem></Appear>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading caps>Git Resources</Heading>
+            <List>
+              <ListItem><ExtLink to="http://rogerdudler.github.io/git-guide/">Git - The Simple Guide</ExtLink></ListItem>
+              <ListItem><ExtLink to="https://www.gitkraken.com/">Git Kraken (excellent Git client with GUI)</ExtLink></ListItem>
+              <ListItem><ExtLink to="http://commonmark.org/">Markdown (handy documenation format)</ExtLink></ListItem>
+              <ListItem><ExtLink to="https://raw.githack.com/">raw.githack.com (download files directly from Git)</ExtLink></ListItem>
+              <ListItem><ExtLink to="https://docs.labtechsoftware.com/LabTech10/Default.htm#UsingLabTech/Scripts/CreatingScripts/Advanced/FunctionReference/FileFunctions/FileDownloadURL.htm">LabTech File Download Function</ExtLink></ListItem>
             </List>
           </Slide>
         </Deck>
