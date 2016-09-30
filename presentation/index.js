@@ -149,8 +149,8 @@ export default class Presentation extends React.Component {
                 <ListItem>
                   Pros
                   <List>
-                    <Appear><ListItem><ExtLink to="https://pypi.python.org/pypi">Rich Ecosystem of Modules</ExtLink></ListItem></Appear>
-                    <Appear><ListItem><ExtLink to="http://www.pyinstaller.org/">Can be Packaged as Native Executables (.exe)</ExtLink></ListItem></Appear>
+                    <Appear><ListItem>Rich <ExtLink to="https://pypi.python.org/pypi">Ecosystem</ExtLink> of Modules</ListItem></Appear>
+                    <Appear><ListItem>Can be <ExtLink to="http://www.pyinstaller.org/">Packaged</ExtLink> as Native Executables (.exe)</ListItem></Appear>
                     <Appear><ListItem>Cross-Platform Compatibility</ListItem></Appear>
                   </List>
                 </ListItem>
@@ -161,7 +161,7 @@ export default class Presentation extends React.Component {
                   <List>
                     <Appear><ListItem>Bigger Learning Curve</ListItem></Appear>
                     <Appear><ListItem>Less High-Level Abstractions</ListItem></Appear>
-                    <Appear><ListItem><ExtLink to="http://py3readiness.org/">The 2.7 vs 3.5 Problem</ExtLink></ListItem></Appear>
+                    <Appear><ListItem>The 2.7 vs 3.5 <ExtLink to="http://py3readiness.org/">Problem</ExtLink></ListItem></Appear>
                   </List>
                 </ListItem>
               </Appear>
@@ -177,7 +177,7 @@ export default class Presentation extends React.Component {
                   <List>
                     <Appear><ListItem>Built-In to Windows</ListItem></Appear>
                     <Appear><ListItem>Microsoft is All-In</ListItem></Appear>
-                    <Appear><ListItem>Can Fall Back to Batch</ListItem></Appear>
+                    <Appear><ListItem>Can <ExtLink to="http://stackoverflow.com/questions/24940243/running-cmd-command-in-powershell">Fall Back</ExtLink> to Batch</ListItem></Appear>
                   </List>
                 </ListItem>
               </Appear>
@@ -187,13 +187,13 @@ export default class Presentation extends React.Component {
                   <List>
                     <Appear><ListItem>Big-ish Learning Curve</ListItem></Appear>
                     <Appear><ListItem>No Cross-Platform</ListItem></Appear>
-                    <Appear><ListItem>The Execution Policy Problem</ListItem></Appear>
+                    <Appear><ListItem>The <ExtLink to="http://ss64.com/ps/set-executionpolicy.html">Execution Policy</ExtLink> Problem</ListItem></Appear>
                   </List>
                 </ListItem>
               </Appear>
             </List>
           </Slide>
-          <Slide>
+          <Slide notes="Better suited for quick shortcuts and macros">
             <Heading caps>-WHAT-</Heading>
             <Heading textColor="secondary" size={4} caps>AutoHotKey / AutoIT</Heading>
             <List>
@@ -202,8 +202,8 @@ export default class Presentation extends React.Component {
                   Pros
                   <List>
                     <Appear><ListItem>Easy to Create Userland Macros</ListItem></Appear>
-                    <Appear><ListItem>Can be Packaged as Native Executables (.exe)</ListItem></Appear>
-                    <Appear><ListItem>Easy to Accept Input from Users</ListItem></Appear>
+                    <Appear><ListItem>Can be <ExtLink to="https://autohotkey.com/docs/Scripts.htm#ahk2exe">Packaged</ExtLink> as Native Executables (.exe)</ListItem></Appear>
+                    <Appear><ListItem>Easy to Accept <ExtLink to="https://autohotkey.com/docs/commands/InputBox.htm">Input</ExtLink> from Users</ListItem></Appear>
                   </List>
                 </ListItem>
               </Appear>
@@ -213,7 +213,59 @@ export default class Presentation extends React.Component {
                   <List>
                     <Appear><ListItem>Non-Traditional Programming Models</ListItem></Appear>
                     <Appear><ListItem>Less Standard Library Coverage</ListItem></Appear>
-                    <Appear><ListItem></ListItem></Appear>
+                    <Appear><ListItem><ExtLink to="https://autohotkey.com/docs/commands/_Include.htm">Naive</ExtLink> Module System</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide notes="">
+            <Heading caps>-WHAT-</Heading>
+            <Heading textColor="secondary" size={4} caps>Batch</Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Pros
+                  <List>
+                    <Appear><ListItem>Already Known <ExtLink to="http://ss64.com/nt/">CLI Commands</ExtLink></ListItem></Appear>
+                    <Appear><ListItem>Can be <ExtLink to="http://stackoverflow.com/questions/20645326/safest-way-to-run-bat-file-from-powershell-script">Called</ExtLink> from and <ExtLink to="http://stackoverflow.com/questions/24940243/running-cmd-command-in-powershell">Used</ExtLink> in PowerShell</ListItem></Appear>
+                    <Appear><ListItem>Lowest Common Denominator on Windows</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Cons
+                  <List>
+                    <Appear><ListItem>Poor Standard Library Coverage</ListItem></Appear>
+                    <Appear><ListItem>Poor Flow Control</ListItem></Appear>
+                    <Appear><ListItem>No Module System</ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide notes="">
+            <Heading caps>-WHAT-</Heading>
+            <Heading textColor="secondary" size={4} caps>IFTTT / Zapier</Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Pros
+                  <List>
+                    <Appear><ListItem>Codeless</ListItem></Appear>
+                    <Appear><ListItem>Automate Interactions with <ExtLink to="https://zapier.com/zapbook/">Hundreds</ExtLink> of Apps and Services</ListItem></Appear>
+                    <Appear><ListItem>Extremely Useful for <ExtLink to="https://zapier.com/zapbook/buffer/">Marketing</ExtLink></ListItem></Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Cons
+                  <List>
+                    <Appear><ListItem>No System-Level Interactions</ListItem></Appear>
+                    <Appear><ListItem>IFTTT: Limited to Simple A-to-B Interactions</ListItem></Appear>
+                    <Appear><ListItem>Zapier: <ExtLink to="https://zapier.com/pricing/">Limited Free Plan</ExtLink></ListItem></Appear>
                   </List>
                 </ListItem>
               </Appear>
