@@ -47,7 +47,8 @@ const images = {
   chartec: require("../assets/CharTecLogo_Red_200.png"),
   relyenz: require("../assets/RelyenzLogo.png"),
   toohard: require("../assets/toohard.gif"),
-  me: require("../assets/me.jpg")
+  me: require("../assets/me.jpg"),
+  searching: require("../assets/searching.gif")
 };
 
 preloader(images);
@@ -94,6 +95,12 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Resources & Continued Learning</ListItem></Appear>
             </List>
           </Slide>
+          <Slide bgColor="black" transition={["fade"]}>
+            <BlockQuote>
+              <Quote textColor="secondary">an investment in automation is an investment in future naps</Quote>
+              <Cite textColor="white"><ExtLink to="https://twitter.com/johnlindquist/status/781560908031983616">@jhooks</ExtLink></Cite>
+            </BlockQuote>
+          </Slide>
           <Slide>
             <Heading caps>-Why-</Heading>
             <List>
@@ -106,7 +113,7 @@ export default class Presentation extends React.Component {
             </List>
             <Appear><Text>Scripts can be useful for more than just support, service, and RMM! One or more of the applications and services you use day-to-day may be scriptable.</Text></Appear>
           </Slide>
-          <Slide bgColor="black">
+          <Slide bgColor="black" transition={["fade"]}>
             <Heading fit textColor="secondary" lineHeight={1.5}>You might be thinking...</Heading>
             <Appear><Image src={images.toohard.replace("/", "")}/></Appear>
             <Appear><Heading fit textColor="primary">It doesn't have to be.</Heading></Appear>
@@ -271,13 +278,20 @@ export default class Presentation extends React.Component {
               </Appear>
             </List>
           </Slide>
+          <Slide bgColor="black" transition={["fade"]}>
+            <Heading textColor="secondary" fit lineHeight={1.5}>So now I have all these scripts...</Heading>
+            <Image src={images.searching.replace("/", "")}/>
+            <Appear>
+              <Heading textColor="secondary" fit lineHeight={1.5}>Where do I put them? How do they work?</Heading>
+            </Appear>
+          </Slide>
           <Slide>
             <Heading caps>-WHERE-</Heading>
             <Heading fit caps size={4} textColor="secondary">Git: It's Not Just for Developers</Heading>
             <List>
               <Appear><ListItem>Version control for any file type.</ListItem></Appear>
               <Appear><ListItem>Documentation can be made and viewed in the same place as your scripts.</ListItem></Appear>
-              <Appear><ListItem>Free hosting is readily available: GitHub, BitBucket, GitLab</ListItem></Appear>
+              <Appear><ListItem>Free hosting available: GitHub, BitBucket, GitLab</ListItem></Appear>
             </List>
           </Slide>
           <Slide>
@@ -292,6 +306,6 @@ export default class Presentation extends React.Component {
           </Slide>
         </Deck>
       </Spectacle>
-    );
+          );
   }
 }
