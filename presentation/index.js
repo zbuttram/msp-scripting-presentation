@@ -342,6 +342,7 @@ export default class Presentation extends React.Component {
               <ListItem><Ext to="https://github.com/sindresorhus/awesome">Awesome Lists</Ext></ListItem>
               <ListItem><Ext to="https://www.codecademy.com/learn/python">Learn Python</Ext></ListItem>
               <ListItem><Ext to="https://www.visualstudio.com/dev-essentials/">Microsoft Dev Deal</Ext></ListItem>
+              <ListItem>Communities: <Ext to="https://www.reddit.com/r/msp/">r/msp</Ext>, <Ext to="https://www.reddit.com/r/sysadmin/">r/sysadmin</Ext></ListItem>
             </List>
           </Slide>
           <Slide bgColor="black" transition={["fade"]}>
