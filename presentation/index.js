@@ -334,8 +334,18 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>WHERE: Where should this script be used, or where should it be run from?</ListItem></Appear>
               <Appear><ListItem>HOW: How do I use this script? Try to provide an example. Does it require any parameters? Does it accept any additional parameters? Does it need to be run as an elevated user?</ListItem></Appear>
               <Appear><ListItem>WHY: Answer any lingering questions. "Why does this script use <S type="italic">X</S> to do <S type="italic">Y</S> ?"</ListItem></Appear>
-              {/* <Appear><ListItem></ListItem></Appear> */}
             </List>
+          </Slide>
+          <Slide bgColor="black" transition={["fade"]}>
+            <Heading caps textColor="secondary">Resources</Heading>
+            <List>
+              <ListItem><Ext to="https://github.com/sindresorhus/awesome">Awesome Lists</Ext></ListItem>
+              <ListItem><Ext to="https://www.codecademy.com/learn/python">Learn Python</Ext></ListItem>
+              <ListItem><Ext to="https://www.visualstudio.com/dev-essentials/">Microsoft Dev Deal</Ext></ListItem>
+            </List>
+          </Slide>
+          <Slide bgColor="black" transition={["fade"]}>
+            <Heading caps textColor="secondary">Questions</Heading>
           </Slide>
         </Deck>
       </Spectacle>
