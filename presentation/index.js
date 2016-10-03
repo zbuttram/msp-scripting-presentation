@@ -24,7 +24,7 @@ import {
   Text
 } from "spectacle";
 
-import CodeSlide from "spectacle-code-slide";
+// import CodeSlide from "spectacle-code-slide";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -36,6 +36,7 @@ import createTheme from "spectacle/lib/themes/default";
 // import Interactive from "../assets/interactive";
 
 const ExtLink = (props) => <Link href={props.to} target="_blank">{props.children}</Link>;
+const Ext = ExtLink;
 
 // Require CSS
 require("normalize.css");
@@ -295,13 +296,45 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide>
-            <Heading caps>Git Resources</Heading>
+            <Heading caps>-WHERE-</Heading>
+            <Heading caps size={4} textColor="secondary">Getting Git</Heading>
+            <List>
+              <ListItem><ExtLink to="http://learngitbranching.js.org/">Interactive Git Tutorial</ExtLink></ListItem>
+              <ListItem><ExtLink to="https://www.gitkraken.com/">Git Kraken (excellent Git client with GUI)</ExtLink></ListItem>
+              <ListItem><ExtLink to="http://learngitbranching.js.org/?NODEMO">Git Sandbox</ExtLink></ListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading caps>-WHERE-</Heading>
+            <Heading caps size={4} textColor="secondary">Additional Git Resources</Heading>
             <List>
               <ListItem><ExtLink to="http://rogerdudler.github.io/git-guide/">Git - The Simple Guide</ExtLink></ListItem>
-              <ListItem><ExtLink to="https://www.gitkraken.com/">Git Kraken (excellent Git client with GUI)</ExtLink></ListItem>
-              <ListItem><ExtLink to="http://commonmark.org/">Markdown (handy documenation format)</ExtLink></ListItem>
               <ListItem><ExtLink to="https://raw.githack.com/">raw.githack.com (download files directly from Git)</ExtLink></ListItem>
               <ListItem><ExtLink to="https://docs.labtechsoftware.com/LabTech10/Default.htm#UsingLabTech/Scripts/CreatingScripts/Advanced/FunctionReference/FileFunctions/FileDownloadURL.htm">LabTech File Download Function</ExtLink></ListItem>
+              <ListItem><ExtLink to="https://github.com/git-tips/tips">Git Tips</ExtLink></ListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading caps>-HOW-</Heading>
+            <Heading fit caps size={4} textColor="secondary">Documentation in Git with Markdown</Heading>
+            {/* <Image src={images.markdown.replace("/", "")}/> */}
+            <List>
+              <Appear><ListItem><Ext to="http://commonmark.org/help/">Simple Syntax</Ext></ListItem></Appear>
+              <Appear><ListItem>Stored with Code</ListItem></Appear>
+              <Appear><ListItem>Easy to Write Examples</ListItem></Appear>
+              <Appear><ListItem>Version Controlled</ListItem></Appear>
+              <Appear><ListItem>Readable in the Same Place</ListItem></Appear>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading caps>-HOW-</Heading>
+            <Heading fit caps size={4} textColor="secondary">Documenting Scripts</Heading>
+            <List>
+              <Appear><ListItem>WHAT: What does this script do/solve?</ListItem></Appear>
+              <Appear><ListItem>WHERE: Where should this script be used, or where should it be run from?</ListItem></Appear>
+              <Appear><ListItem>HOW: How do I use this script? Try to provide an example. Does it require any parameters? Does it accept any additional parameters? Does it need to be run as an elevated user?</ListItem></Appear>
+              <Appear><ListItem>WHY: Answer any lingering questions. "Why does this script use <S type="italic">X</S> to do <S type="italic">Y</S> ?"</ListItem></Appear>
+              {/* <Appear><ListItem></ListItem></Appear> */}
             </List>
           </Slide>
         </Deck>
