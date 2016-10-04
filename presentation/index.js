@@ -194,7 +194,7 @@ export default class Presentation extends React.Component {
                   Cons
                   <List>
                     <Appear><ListItem>Big-ish Learning Curve</ListItem></Appear>
-                    <Appear><ListItem>No Cross-Platform</ListItem></Appear>
+                    <Appear><ListItem>No Cross-Platform (<Ext to="https://github.com/PowerShell/PowerShell">Yet</Ext>)</ListItem></Appear>
                     <Appear><ListItem>The <ExtLink to="http://ss64.com/ps/set-executionpolicy.html">Execution Policy</ExtLink> Problem</ListItem></Appear>
                   </List>
                 </ListItem>
@@ -343,9 +343,10 @@ export default class Presentation extends React.Component {
               <ListItem><Ext to="https://www.codecademy.com/learn/python">Learn Python</Ext></ListItem>
               <ListItem><Ext to="https://www.visualstudio.com/dev-essentials/">Microsoft Dev Deal</Ext></ListItem>
               <ListItem>Communities: <Ext to="https://www.reddit.com/r/msp/">r/msp</Ext>, <Ext to="https://www.reddit.com/r/sysadmin/">r/sysadmin</Ext></ListItem>
+              <ListItem><Ext to="http://www.kennethreitz.org/projects/">Kenneth Reitz Python Projects</Ext></ListItem>
             </List>
           </Slide>
-          <Slide bgColor="black" transition={["fade"]}>
+          <Slide bgColor="black">
             <Heading caps textColor="secondary">Questions</Heading>
           </Slide>
         </Deck>
